@@ -21,6 +21,8 @@ $result = mysqli_query($conn, $sql);
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Age</th>
+                <th>Gender</th>
             </tr>
         </thead>
         <tbody>
@@ -32,6 +34,16 @@ $result = mysqli_query($conn, $sql);
                         echo("</td>");
                         echo("<td>");
                             echo($employee['name']);
+                        echo("</td>");
+                        echo("<td>");
+                            echo($employee['age']);
+                        echo("</td>");
+                        echo("<td>");
+                            $gender_id = $employee['gender_id'];
+                            $gender_sql = "SElECT name FROM gender WHERE id = $gender_id";
+                            $gender_result = mysqli_query($conn, $gender_sql);
+                            $gender = mysqli_fetch_assoc($gender_result);
+                            echo($gender['name']);
                         echo("</td>");
                     echo("</tr>");
                 }
