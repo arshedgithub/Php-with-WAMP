@@ -15,7 +15,7 @@ echo("<table border='1'>");
     echo("</tr>");
     echo("<tr>");
         echo("<td>2</td>");
-        echo("<td>$name2</td>");
+        echo('<td>'.$name2.'</td>');
     echo("</tr>");
 echo("</table>");
 ?>
