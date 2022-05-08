@@ -11,5 +11,15 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if(!$conn){
     die("connection failed");
 }
-echo("connected succesfully");
+
+$sql = "SELECT * FROM employee";
+$result = mysqli_query($conn, $sql);
+
+$employee = mysqli_fetch_assoc($result);
+var_dump($employee);
+
+echo($employee['id']);
+echo($employee['name']);
+echo($employee['age']);
+echo($employee['gender']);
 ?>
